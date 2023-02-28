@@ -3,8 +3,7 @@
 
 #include <iostream>
 
-template<typename T>
-T* merge_sort(T* up, int* down, unsigned int left, unsigned int right)
+double* merge_sort(double* up, double* down, unsigned int left, unsigned int right)
 {
     if (left == right)
     {
@@ -15,11 +14,11 @@ T* merge_sort(T* up, int* down, unsigned int left, unsigned int right)
     unsigned int middle = left + (right - left) / 2;
 
     // разделяй и сортируй
-    int* l_buff = merge_sort(up, down, left, middle);
-    int* r_buff = merge_sort(up, down, middle + 1, right);
+    double* l_buff = merge_sort(up, down, left, middle);
+    double* r_buff = merge_sort(up, down, middle + 1, right);
 
     // слияние двух отсортированных половин
-    T* target = l_buff == up ? down : up;
+    double* target = l_buff == up ? down : up;
 
     unsigned int l_cur = left, r_cur = middle + 1;
     for (unsigned int i = left; i <= right; i++)
